@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>GGs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      html {
+        background: #303030;
+        color: #dcdcaa;
+        font-size: 60px;
+        text-align: center;
+        font-weight: bold;
+        text-transform: capitalize;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="wrapper"><span id="adjective"></span> <span id="noun"></span></p>
+  </body>
+  <script src="words.js"></script>
+  <script>
+    if (!window.words) {
+      console.error("no words :(");
+    } else {
+      function randomFromArray(array) {
+        var index = Math.floor(Math.random() * array.length);
+        var word = array[index];
+        return word;
+      }
+      document.getElementById("adjective").innerText = randomFromArray(
+        window.words.adjectives
+      );
+      document.getElementById("noun").innerText = randomFromArray(
+        window.words.nouns
+      );
+    }
+  </script>
+</html>
